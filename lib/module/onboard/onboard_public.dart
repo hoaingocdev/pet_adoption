@@ -1,8 +1,12 @@
 library onboard;
 
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:pet_adoption/widget/tt_model_mixin.p.dart';
+import 'package:pet_adoption/module/module.dart';
+import 'package:pet_adoption/res/res.dart';
+import 'package:pet_adoption/widget/widget.dart';
 import 'package:provider/provider.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 part 'onboard_view.dart';
 part 'onboard_model.dart';

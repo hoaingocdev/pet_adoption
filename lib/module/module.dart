@@ -3,3 +3,4 @@
 ///---------------------------------------------------------------
 
 export './onboard/onboard_public.dart';
+export './welcome/welcome_public.dart';
