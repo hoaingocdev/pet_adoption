@@ -91,20 +91,23 @@ class _SignInViewState extends TTState<_SignInModel, _SignInView> {
                   ),
                 ),
                 const SizedBox(height: 105),
-                RichText(
-                  text: TextSpan(
-                    text: 'Don\'t have account yet?',
-                    style: St.body16400.copyWith(
-                      color: Cl.black,
+                InkWell(
+                  onTap: model.onRegistrationPressed,
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Don\'t have account yet?',
+                      style: St.body16400.copyWith(
+                        color: Cl.black,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'Registration',
+                          style: St.body16700.copyWith(
+                            color: Cl.violet,
+                          ),
+                        )
+                      ],
                     ),
-                    children: [
-                      TextSpan(
-                        text: 'Registration',
-                        style: St.body16700.copyWith(
-                          color: Cl.violet,
-                        ),
-                      )
-                    ],
                   ),
                 )
               ],
@@ -114,7 +117,7 @@ class _SignInViewState extends TTState<_SignInModel, _SignInView> {
               left: 20,
               right: 20,
               child: bulidShadow(),
-            )
+            ),
           ],
         ),
       ),
@@ -124,7 +127,7 @@ class _SignInViewState extends TTState<_SignInModel, _SignInView> {
 
   Widget bulidShadow() {
     return Container(
-      height: 270,
+      // height: 270,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -138,40 +141,64 @@ class _SignInViewState extends TTState<_SignInModel, _SignInView> {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            const SizedBox(height: 11),
-            TextField(
-              cursorColor: Cl.violet,
-              decoration: InputDecoration(
+        child: Form(
+          key: model.formKey,
+          child: Column(
+            children: [
+              const SizedBox(height: 11),
+              AuthTextField(
+                  controller: model.emailController,
+                  onChanged: (v) => model.validate(),
                   labelText: 'Email',
-                  labelStyle: St.body13600.copyWith(color: Cl.violet),
-                  focusedBorder: UnderlineInputBorder(
-                    borderRadius: BorderRadius.circular(0),
-                    borderSide: const BorderSide(color: Cl.violet, width: 3),
-                  )
-                  // OutlineInputBorder(
-                  //   borderRadius: BorderRadius.circular(20),
-                  //   borderSide: BorderSide.none,
-                  // ),
+                  suffixIcon: model.hasIconEmail
+                      ? Image.asset(
+                          Id.ic_success,
+                          height: 10,
+                          width: 10,
+                        )
+                      : null,
+                  isRequired: true,
+                  textType: TextType.email),
+              const SizedBox(height: 22),
+              AuthTextField(
+                onChanged: (v) => model.validate(),
+                controller: model.passwordController,
+                obscureText: model.obscureText,
+                labelText: 'Password',
+                suffixIcon: IconButton(
+                  onPressed: model.onVisibilityPressd,
+                  icon: Icon(
+                    model.obscureText ? Icons.visibility : Icons.visibility_off,
+                    size: 15,
                   ),
-            ),
-            TextField(
-              cursorColor: Cl.violet,
-              decoration: InputDecoration(
-                  labelText: 'Email',
-                  labelStyle: St.body13600,
-                  focusedBorder: UnderlineInputBorder(
-                    borderRadius: BorderRadius.circular(0),
-                    borderSide: const BorderSide(color: Cl.violet, width: 5),
-                  )
-                  // OutlineInputBorder(
-                  //   borderRadius: BorderRadius.circular(20),
-                  //   borderSide: BorderSide.none,
-                  // ),
+                ),
+                isRequired: true,
+                textType: TextType.password,
+              ),
+              const SizedBox(height: 12),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Do not remember the password?',
+                  style: St.body12400.copyWith(
+                    color: Cl.violet,
                   ),
-            )
-          ],
+                ),
+              ),
+              const SizedBox(height: 24),
+              TTButton(
+                onPressed: model.isPasswordenabled ? model.onSignInPressed : null,
+                backgroundColor: Cl.violet,
+                child: Center(
+                  child: Text(
+                    'Sign In',
+                    style: St.body16700.copyWith(color: Cl.white),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 35),
+            ],
+          ),
         ),
       ),
     );

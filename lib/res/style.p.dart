@@ -35,4 +35,9 @@ class St {
     fontWeight: FontWeight.w700,
     fontFamily: Font.encodeSans,
   );
+  static TextStyle body12400 = const TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    fontFamily: Font.encodeSans,
+  );
 }
