@@ -1,7 +1,6 @@
 part of onboard;
 
 class _OnboardViewState extends TTState<_OnboardModel, _OnboardView> {
-  late bool? isSelected;
   @override
   Widget buildWithModel(BuildContext context, _OnboardModel model) {
     return Scaffold(
@@ -25,9 +24,12 @@ class _OnboardViewState extends TTState<_OnboardModel, _OnboardView> {
                   right: 20,
                   top: 13 + MediaQuery.of(context).padding.top,
                 ),
-                child: Text(
-                  'Sign In',
-                  style: St.body13600.copyWith(color: Cl.violet),
+                child: InkWell(
+                  onTap: model.onSignInPressed,
+                  child: Text(
+                    'Sign In',
+                    style: St.body13600.copyWith(color: Cl.violet),
+                  ),
                 ),
               ),
             ),

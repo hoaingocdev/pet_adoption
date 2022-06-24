@@ -62,17 +62,20 @@ class _WelcomeViewState extends TTState<_WelcomeModel, _WelcomeView> {
                 ),
               ),
               const SizedBox(height: 80),
-              Center(
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Already have an account?',
-                    style: St.body16400.copyWith(color: Cl.white),
-                    children: [
-                      TextSpan(
-                        text: 'Sign In',
-                        style: St.body16700.copyWith(color: Cl.white),
-                      ),
-                    ],
+              InkWell(
+                onTap: model.onSignInPressed,
+                child: Center(
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Already have an account?',
+                      style: St.body16400.copyWith(color: Cl.white),
+                      children: [
+                        TextSpan(
+                          text: 'Sign In',
+                          style: St.body16700.copyWith(color: Cl.white),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               )

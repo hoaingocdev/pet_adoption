@@ -6,4 +6,10 @@ class _WelcomeModel extends TTChangeNotifier<_WelcomeView> {
   void onContinnueWithFacebook() {}
 
   void onCotinueWithGoogle() {}
+
+  void onSignInPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createSignIn();
+    }));
+  }
 }

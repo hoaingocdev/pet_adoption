@@ -30,4 +30,9 @@ class St {
     fontWeight: FontWeight.w700,
     fontFamily: Font.encodeSans,
   );
+  static TextStyle body34700 = const TextStyle(
+    fontSize: 34,
+    fontWeight: FontWeight.w700,
+    fontFamily: Font.encodeSans,
+  );
 }

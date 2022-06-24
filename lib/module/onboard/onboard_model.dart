@@ -23,4 +23,10 @@ class _OnboardModel extends TTChangeNotifier<_OnboardView> {
       curve: Curves.ease,
     );
   }
+
+  void onSignInPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createSignIn();
+    }));
+  }
 }
