@@ -40,4 +40,24 @@ class St {
     fontWeight: FontWeight.w400,
     fontFamily: Font.encodeSans,
   );
+  static TextStyle body10500 = const TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+    fontFamily: Font.encodeSans,
+  );
+  static TextStyle body11500 = const TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.w500,
+    fontFamily: Font.encodeSans,
+  );
+  static TextStyle body18700 = const TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    fontFamily: Font.encodeSans,
+  );
+  static TextStyle body16600 = const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    fontFamily: Font.encodeSans,
+  );
 }

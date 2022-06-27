@@ -68,7 +68,7 @@ class AuthTextField extends StatelessWidget {
         fillColor: Cl.grey,
         labelText: labelText,
         labelStyle: St.body13600.copyWith(color: Cl.grey),
-        floatingLabelStyle: const TextStyle(color: Cl.violet),
+        floatingLabelStyle: St.body13600.copyWith(color: Cl.violet),
         focusedBorder: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(0),
           borderSide: const BorderSide(color: Cl.violet, width: 3),
