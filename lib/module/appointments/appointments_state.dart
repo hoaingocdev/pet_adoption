@@ -11,7 +11,7 @@ class _AppointmentsViewState extends TTState<_AppointmentsModel, _AppointmentsVi
         child: Column(
           children: [
             Container(
-              height: 176 + device.padding.top,
+              // height: 136 + device.padding.top,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(34),
@@ -29,18 +29,23 @@ class _AppointmentsViewState extends TTState<_AppointmentsModel, _AppointmentsVi
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(
-                    child: Text(
-                      'Appointments',
-                      style: St.body18700,
+                  Padding(
+                    padding: EdgeInsets.only(top: 9 + device.padding.top),
+                    child: Center(
+                      child: Text(
+                        'Appointments',
+                        style: St.body18700,
+                      ),
                     ),
                   ),
-                  const SizedBox(height: 35),
+                  const SizedBox(height: 24),
                   builTabBar(model, tabIndex),
+                  const SizedBox(height: 26)
                 ],
               ),
             ),
-            buildTabBarView()
+            // SizedBox(height: 32),
+            buildTabBarView(),
           ],
         ),
       ),
@@ -51,23 +56,47 @@ class _AppointmentsViewState extends TTState<_AppointmentsModel, _AppointmentsVi
     return Expanded(
       child: TabBarView(
         children: [
-          ListView.separated(
-            separatorBuilder: (_, i) {
-              return const SizedBox(height: 10);
-            },
-            itemCount: 100,
-            itemBuilder: (_, i) {
-              return PersonInformation(
-                onCencelPressed: model.onCenCelPressed,
-                onEditPressed: model.onEditPressed,
-              );
-            },
-          ),
-          NoAppoinntment(
-            onFindASpecialistPressed: model.onFindASpecialistPressed,
-          ),
+          builUpcoming(),
+          buildPast(),
+          // NoAppoinntment(
+          //   onFindASpecialistPressed: model.onFindASpecialistPressed,
+          // ),
         ],
       ),
+    );
+  }
+
+  Widget buildPast() {
+    if (model.lsPast.isEmpty) {
+      return const NoAppoinntment();
+    }
+    return ListView.separated(
+      separatorBuilder: (_, i) {
+        return const SizedBox(height: 10);
+      },
+      itemCount: model.lsPast.length,
+      itemBuilder: (_, i) {
+        return Past(appointmentInfo: model.lsPast[i]);
+      },
+    );
+  }
+
+  Widget builUpcoming() {
+    if (model.lsUpcoming.isEmpty) {
+      return const NoAppoinntment();
+    }
+    return ListView.separated(
+      separatorBuilder: (_, i) {
+        return const SizedBox(height: 10);
+      },
+      itemCount: model.lsUpcoming.length,
+      itemBuilder: (_, i) {
+        return Upcoming(
+          appointmentInfo: model.lsUpcoming[i],
+          onCencelPressed: model.onCenCelPressed,
+          onEditPressed: model.onEditPressed,
+        );
+      },
     );
   }
 

@@ -2,6 +2,8 @@
 /// WARNING: THIS FILE IS GENERATE FILE. SHOULDN'T EDIT THIS FILE.
 ///---------------------------------------------------------------
 
+// ignore_for_file: constant_identifier_names
+
 class Id {
   Id._();
 

@@ -1,10 +1,16 @@
 part of appointments;
 
-class PersonInformation extends StatelessWidget {
+class Upcoming extends StatelessWidget {
   final VoidCallback? onEditPressed;
   final VoidCallback? onCencelPressed;
+  final AppointmentInfo appointmentInfo;
 
-  const PersonInformation({Key? key, this.onEditPressed, this.onCencelPressed}) : super(key: key);
+  const Upcoming({
+    Key? key,
+    this.onEditPressed,
+    this.onCencelPressed,
+    required this.appointmentInfo,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +37,7 @@ class PersonInformation extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.network(
-                    'https://placehold.jp/cc9999/993333/.png',
+                    appointmentInfo.imageUrl,
                     width: 88,
                     height: 88,
                   ),
@@ -41,11 +47,11 @@ class PersonInformation extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Alekseenko Vasily ',
+                      appointmentInfo.name,
                       style: St.body18700.copyWith(color: Cl.black),
                     ),
                     Text(
-                      'Veterinary Dentist',
+                      appointmentInfo.major,
                       style: St.body14600.copyWith(color: Cl.black),
                     ),
                     Row(
@@ -64,12 +70,12 @@ class PersonInformation extends StatelessWidget {
                             color: Colors.amber,
                           ),
                           onRatingUpdate: (rating) {
-                            print(rating);
+                            // print(rating);
                           },
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          '125 Reviews',
+                          appointmentInfo.reviewCountDisplay.toString(),
                           style: St.body11500.copyWith(color: Cl.grey),
                         )
                       ],
@@ -80,14 +86,14 @@ class PersonInformation extends StatelessWidget {
                         builItem(imageAsset: Id.ic_map),
                         const SizedBox(width: 8),
                         Text(
-                          '1.5 km',
+                          appointmentInfo.distanceDisplay.toString(),
                           style: St.body11500.copyWith(color: Cl.black),
                         ),
                         const SizedBox(width: 10),
                         builItem(imageAsset: Id.ic_wallet),
                         const SizedBox(width: 8),
                         Text(
-                          '\$20',
+                          appointmentInfo.feeDisplay.toString(),
                           style: St.body11500.copyWith(color: Cl.black),
                         ),
                       ],
@@ -97,8 +103,8 @@ class PersonInformation extends StatelessWidget {
               ],
             ),
           ),
-          buildWorkingTime(),
-          SizedBox(height: 16),
+          buildWorkingTime(appointmentInfo: appointmentInfo),
+          const SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
@@ -136,7 +142,9 @@ class PersonInformation extends StatelessWidget {
     );
   }
 
-  Widget buildWorkingTime() {
+  Widget buildWorkingTime({
+    required AppointmentInfo appointmentInfo,
+  }) {
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
       margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -159,13 +167,13 @@ class PersonInformation extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Veterinary clinic "Alden-Vet"',
+                    appointmentInfo.clinic,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: St.body14600.copyWith(color: Cl.black),
                   ),
                   Text(
-                    '141 N Union Ave, Los Angeles, CA',
+                    appointmentInfo.address,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: St.body12400.copyWith(color: Cl.black),
@@ -185,7 +193,7 @@ class PersonInformation extends StatelessWidget {
             ),
             const SizedBox(width: 16),
             Text(
-              'Wed 9 Sep — 10:30 am',
+              appointmentInfo.time,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: St.body12400.copyWith(color: Cl.black),

@@ -14,6 +14,10 @@ class AppointmentInfo extends ChangeNotifier {
   int get star => _data['star'] ?? 0;
   int get reviewCount => _data['reviewCount'] ?? 0;
 
+  String get reviewCountDisplay => '$reviewCount Reviews';
+  String get distanceDisplay => '$distance km';
+  String get feeDisplay => '\$$fee';
+
   AppointmentInfo.from(Map e) {
     _data.addAll(e);
   }

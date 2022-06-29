@@ -8,14 +8,14 @@ class NoAppoinntment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 94),
+        const SizedBox(height: 94),
         Image.asset(Id.ic_clock_big),
-        SizedBox(height: 29),
+        const SizedBox(height: 29),
         Text(
           'No appointments yet',
           style: St.body14600.copyWith(color: Cl.grey),
         ),
-        Spacer(),
+        const Spacer(),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 67),
           child: TTButton(
@@ -24,7 +24,7 @@ class NoAppoinntment extends StatelessWidget {
             text: 'Find a specialist',
           ),
         ),
-        SizedBox(height: 58),
+        const SizedBox(height: 58),
       ],
     );
   }
