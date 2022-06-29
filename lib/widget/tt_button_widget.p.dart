@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_adoption/res/color.p.dart';
+import 'package:pet_adoption/res/style.p.dart';
 
 class TTButton extends StatelessWidget {
   final String? text;
@@ -52,16 +53,21 @@ class TTButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
-          border: Border.all(color: borderColor ?? Colors.transparent),
-          color: backgroundColor,
-          // boxShadow:
-        ),
-        child: child,
-      ),
+          height: height,
+          width: width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(borderRadius),
+            border: Border.all(color: borderColor ?? Colors.transparent),
+            color: backgroundColor,
+            // boxShadow:
+          ),
+          child: Center(
+            child: child ??
+                Text(
+                  text ?? '',
+                  style: St.body16700.copyWith(color: Cl.white),
+                ),
+          )),
     );
   }
 }

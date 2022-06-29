@@ -8,4 +8,10 @@ class _AppointmentsModel extends TTChangeNotifier<_AppointmentsView> {
       notifyListeners();
     }
   }
+
+  void onCenCelPressed() {}
+
+  void onEditPressed() {}
+
+  void onFindASpecialistPressed() {}
 }
