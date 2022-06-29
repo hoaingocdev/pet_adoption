@@ -27,7 +27,7 @@ class _AppointmentsModel extends TTChangeNotifier<_AppointmentsView> {
     });
     final lsAppointment = List.generate(10, (index) {
       return AppointmentInfo.from({
-        'imageUrl': 'https://placehold.jp/cc9999/993333/100x100.png',
+        'imageUrl': 'https://placehold.jp/cc9999/993333/.png',
         'name': 'name $index',
         'major': 'Veterinary Dentist$index',
         'clinic': 'Veterinary clinic "Alden-Vet"$index',

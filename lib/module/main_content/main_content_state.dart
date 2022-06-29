@@ -41,9 +41,7 @@ class _MainContentViewState extends TTState<_MainContentModel, _MainContentView>
                     ),
                     itemCount: model.categories.length,
                     itemBuilder: (_, i) {
-                      return buildListIterm(
-                        caterogyInfo: model.categories[i],
-                      );
+                      return buildListIterm(caterogyInfo: model.categories[i], onPressed: model.onShowBottomSheet);
                     },
                   ),
                 )
@@ -87,34 +85,38 @@ class _MainContentViewState extends TTState<_MainContentModel, _MainContentView>
   }
 
   Widget buildListIterm({
+    VoidCallback? onPressed,
     required CaterogyInfo caterogyInfo,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: Cl.white,
-        boxShadow: [
-          BoxShadow(
-            offset: const Offset(3, 3),
-            blurRadius: 34,
-            color: Cl.color2E1E7A.withOpacity(0.1),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.network(
-            caterogyInfo.imageUrl,
-            width: 34,
-            height: 34,
-          ),
-          const SizedBox(height: 6),
-          Text(
-            caterogyInfo.name,
-            style: St.body11500,
-          ),
-        ],
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: Cl.white,
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(3, 3),
+              blurRadius: 34,
+              color: Cl.color2E1E7A.withOpacity(0.1),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(
+              caterogyInfo.imageUrl,
+              width: 34,
+              height: 34,
+            ),
+            const SizedBox(height: 6),
+            Text(
+              caterogyInfo.name,
+              style: St.body11500,
+            ),
+          ],
+        ),
       ),
     );
   }

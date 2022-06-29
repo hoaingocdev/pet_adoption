@@ -2,6 +2,8 @@
 /// WARNING: THIS FILE IS GENERATE FILE. SHOULDN'T EDIT THIS FILE.
 ///---------------------------------------------------------------
 
+export './add_pet_detail/add_pet_detail_public.dart';
+export './add_pet_detail_info/add_pet_detail_info_public.dart';
 export './appointments/appointments_public.dart';
 export './explore/explore_public.dart';
 export './main/main_public.dart';

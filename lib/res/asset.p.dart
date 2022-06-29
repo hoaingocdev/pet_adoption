@@ -2,14 +2,13 @@
 /// WARNING: THIS FILE IS GENERATE FILE. SHOULDN'T EDIT THIS FILE.
 ///---------------------------------------------------------------
 
-// ignore_for_file: constant_identifier_names
-
 class Id {
   Id._();
 
   static const String ic_clock = 'assets/images/ic_clock.png';
   static const String ic_clock_big = 'assets/images/ic_clock_big.png';
   static const String ic_clock_black = 'assets/images/ic_clock_black.png';
+  static const String ic_close = 'assets/images/ic_close.png';
   static const String ic_explore = 'assets/images/ic_explore.png';
   static const String ic_facebook = 'assets/images/ic_facebook.png';
   static const String ic_fb = 'assets/images/ic_fb.png';

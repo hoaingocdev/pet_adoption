@@ -18,4 +18,8 @@ class _MainContentModel extends TTChangeNotifier<_MainContentView> {
   }
 
   void oSearchPressed() {}
+
+  void onShowBottomSheet() {
+    showAddPetDetailBottomSheet(context);
+  }
 }
