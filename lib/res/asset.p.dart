@@ -12,10 +12,13 @@ class Id {
   static const String ic_explore = 'assets/images/ic_explore.png';
   static const String ic_facebook = 'assets/images/ic_facebook.png';
   static const String ic_fb = 'assets/images/ic_fb.png';
+  static const String ic_female = 'assets/images/ic_female.png';
   static const String ic_find = 'assets/images/ic_find.png';
   static const String ic_gg_red = 'assets/images/ic_gg_red.png';
   static const String ic_google = 'assets/images/ic_google.png';
+  static const String ic_male = 'assets/images/ic_male.png';
   static const String ic_map = 'assets/images/ic_map.png';
+  static const String ic_plus = 'assets/images/ic_plus.png';
   static const String ic_profile = 'assets/images/ic_profile.png';
   static const String ic_search = 'assets/images/ic_search.png';
   static const String ic_success = 'assets/images/ic_success.png';

@@ -34,6 +34,7 @@ class TTButton extends StatelessWidget {
       Color? shadowColor,
       double? borderRadius,
       double? height,
+      double? width,
       Widget? child,
       Color? backgroundColor,
       VoidCallback? onPressed}) {
@@ -41,9 +42,10 @@ class TTButton extends StatelessWidget {
       backgroundColor: backgroundColor,
       onPressed: onPressed,
       hasShadow: true,
+      width: width,
       height: height ?? 46,
       borderRadius: borderRadius ?? 24,
-      shadowColor: shadowColor ?? Cl.violet.withOpacity(0.3),
+      shadowColor: shadowColor ?? Cl.cl4552CB.withOpacity(0.3),
       child: child,
     );
   }
@@ -59,7 +61,17 @@ class TTButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius),
             border: Border.all(color: borderColor ?? Colors.transparent),
             color: backgroundColor,
-            // boxShadow:
+            boxShadow: hasShadow
+                ? [
+                    BoxShadow(
+                      offset: const Offset(0, 4),
+                      blurRadius: 13,
+                      color: shadowColor.withOpacity(
+                        0.3,
+                      ),
+                    ),
+                  ]
+                : [],
           ),
           child: Center(
             child: child ??

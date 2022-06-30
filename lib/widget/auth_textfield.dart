@@ -9,6 +9,7 @@ class AuthTextField extends StatelessWidget {
 
   final String labelText;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final Color? iconColor;
   final bool obscureText;
   final bool isRequired;
@@ -28,6 +29,7 @@ class AuthTextField extends StatelessWidget {
     this.controller,
     this.onChanged,
     this.enabled = true,
+    this.prefixIcon,
   }) : super(key: key);
 
   String? validate(String? value) {
@@ -63,6 +65,7 @@ class AuthTextField extends StatelessWidget {
       obscureText: obscureText,
       cursorColor: Cl.violet,
       decoration: InputDecoration(
+        prefixIcon: prefixIcon,
         iconColor: iconColor,
         suffixIcon: suffixIcon,
         fillColor: Cl.grey,

@@ -3,7 +3,7 @@ part of add_pet_detail;
 class _AddPetDetailViewState extends TTState<_AddPetDetailModel, _AddPetDetailView> {
   @override
   Widget buildWithModel(BuildContext context, _AddPetDetailModel model) {
-    return Container(
+    return SizedBox(
       height: 375,
       child: Column(
         children: [
