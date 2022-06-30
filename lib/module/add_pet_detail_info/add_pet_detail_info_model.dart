@@ -1,31 +1,20 @@
 part of add_pet_detail_info;
 
-enum GenderEnum { male, female }
-
 class _AddPetDetailInfoModel extends TTChangeNotifier<_AddPetDetailInfoView> {
-  final pets = <PetInfo>[];
+  final pets = <PetSpecyInfo>[];
   final breeds = <BreedInfo>[];
   final sizes = <SizeInfo>[];
-  GenderEnum genderEnum = GenderEnum.female;
-
-  PetInfo? petSelected;
-  BreedInfo? breedSelected;
-  SizeInfo? sizeSelected;
-
-  bool get isMale => genderEnum == GenderEnum.male;
-  bool get isFemale => genderEnum == GenderEnum.female;
-
-  String get petSelectedName => petSelected?.namePet ?? '';
-  String get breedSelectedName => breedSelected?.breedName ?? '';
-  String get sizeSelectedName => sizeSelected?.sizePet ?? '';
+  PetInfo petInfo = PetInfo();
 
   _AddPetDetailInfoModel() {
     _initData();
   }
 
+  get onNeuteredPressed => null;
+
   void _initData() {
     final lsPet = List.generate(3, (index) {
-      return PetInfo.from({
+      return PetSpecyInfo.from({
         'namePet': 'namePet$index',
       });
     });
@@ -51,50 +40,17 @@ class _AddPetDetailInfoModel extends TTChangeNotifier<_AddPetDetailInfoView> {
 
   void onSkipPressed() {}
 
-  void onPetChanged(PetInfo? value) {
-    if (value == null) {
+  void onDateOfBirthPressed() async {
+    final pickedDate = await showDatePicker(
+      context: context,
+      initialDate: petInfo.dob,
+      firstDate: DateTime(2000, 1, 1),
+      lastDate: DateTime.now(),
+    );
+    if (pickedDate == null || pickedDate == petInfo.dob) {
       return;
     }
-    if (value == petSelected) {
-      return;
-    }
-    petSelected = value;
+    petInfo.setDob(pickedDate);
     notifyListeners();
-  }
-
-  onBreedChanged(BreedInfo? value) {
-    if (value == null) {
-      return;
-    }
-    if (value == breedSelected) {
-      return;
-    }
-    breedSelected = value;
-    notifyListeners();
-  }
-
-  onSizeChanged(SizeInfo? value) {
-    if (value == null) {
-      return;
-    }
-    if (value == sizeSelected) {
-      return;
-    }
-    sizeSelected = value;
-    notifyListeners();
-  }
-
-  void onMalePressed() {
-    if (genderEnum != GenderEnum.male) {
-      genderEnum = GenderEnum.male;
-      notifyListeners();
-    }
-  }
-
-  void onFemalePressed() {
-    if (genderEnum != GenderEnum.female) {
-      genderEnum = GenderEnum.female;
-      notifyListeners();
-    }
   }
 }

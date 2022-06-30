@@ -3,7 +3,7 @@ part of add_pet_detail_info;
 class LsGeneralInformation extends StatelessWidget {
   final String text;
   final String title;
-  final Function(PetInfo)? onPetSelected;
+  final Function(PetSpecyInfo)? onPetSelected;
   final Function(BreedInfo)? onBreedtSelected;
   final Function(SizeInfo)? onSizeSelected;
   final List<dynamic> list;
@@ -20,8 +20,6 @@ class LsGeneralInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<_AddPetDetailInfoModel>();
-
     return PopupMenuButton(
       offset: const Offset(100, 20),
       child: Column(
@@ -60,7 +58,7 @@ class LsGeneralInformation extends StatelessWidget {
         });
       },
       onSelected: (value) {
-        if (value is PetInfo) {
+        if (value is PetSpecyInfo) {
           onPetSelected?.call(value);
         }
         if (value is BreedInfo) {
