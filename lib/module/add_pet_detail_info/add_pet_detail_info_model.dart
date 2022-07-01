@@ -4,6 +4,7 @@ class _AddPetDetailInfoModel extends TTChangeNotifier<_AddPetDetailInfoView> {
   final pets = <PetSpecyInfo>[];
   final breeds = <BreedInfo>[];
   final sizes = <SizeInfo>[];
+  final reminders = <RemindersInfo>[];
   PetInfo petInfo = PetInfo();
 
   _AddPetDetailInfoModel() {
@@ -29,6 +30,13 @@ class _AddPetDetailInfoModel extends TTChangeNotifier<_AddPetDetailInfoView> {
         'sizePet': 'sizePet$index',
       });
     });
+    final lsreminders = List.generate(100, (index) {
+      return RemindersInfo.from({
+        'typeVaccine': 'typeVaccince$index',
+        'vaccinationTime': 'vaccinationTime$index',
+      });
+    });
+    reminders.addAll(lsreminders);
     sizes.addAll(lsSize);
     pets.addAll(lsPet);
     breeds.addAll(lsBreed);
@@ -52,5 +60,11 @@ class _AddPetDetailInfoModel extends TTChangeNotifier<_AddPetDetailInfoView> {
     }
     petInfo.setDob(pickedDate);
     notifyListeners();
+  }
+
+  void onNextPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createEditProfile();
+    }));
   }
 }

@@ -5,6 +5,7 @@
 export './add_pet_detail/add_pet_detail_public.dart';
 export './add_pet_detail_info/add_pet_detail_info_public.dart';
 export './appointments/appointments_public.dart';
+export './edit_profile/edit_profile_public.dart';
 export './explore/explore_public.dart';
 export './main/main_public.dart';
 export './main_content/main_content_public.dart';
