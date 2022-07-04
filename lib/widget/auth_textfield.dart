@@ -1,6 +1,6 @@
 part of sign_in;
 
-enum TextType { password, email, normal }
+enum TextType { password, email, normal, phone }
 
 class AuthTextField extends StatelessWidget {
   final TextEditingController? controller;
@@ -34,6 +34,14 @@ class AuthTextField extends StatelessWidget {
 
   String? validate(String? value) {
     switch (textType) {
+      case TextType.phone:
+        if (isRequired && (value == null || value.isEmpty)) {
+          return 'Vui lòng nhập số điện thoại';
+        }
+        if (value?.length != 10) {
+          return 'Số điện thoại không hợp lệ';
+        }
+        return null;
       case TextType.password:
         if (isRequired && (value == null || value.isEmpty)) {
           return 'Vui lòng nhập mật khẩu';
@@ -58,6 +66,7 @@ class AuthTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      inputFormatters: inputFormatters,
       enabled: enabled,
       onChanged: onChanged,
       controller: controller,
