@@ -66,13 +66,19 @@ class _RegistrationModel extends TTChangeNotifier<_RegistrationView> {
       return;
     }
 
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) {
       return createMain();
-    }));
+    }), (route) => false);
   }
 
   void onVisibilityPressed() {
     obscureText = !obscureText;
     notifyListeners();
+  }
+
+  void onSignInPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createSignIn();
+    }));
   }
 }

@@ -1,13 +1,14 @@
 part of add_pet_detail_info;
 
 class _AddPetDetailInfoModel extends TTChangeNotifier<_AddPetDetailInfoView> {
+  final bool isFromEdit;
   final pets = <PetSpecyInfo>[];
   final breeds = <BreedInfo>[];
   final sizes = <SizeInfo>[];
   final reminders = <RemindersInfo>[];
   PetInfo petInfo = PetInfo();
 
-  _AddPetDetailInfoModel() {
+  _AddPetDetailInfoModel(this.isFromEdit) {
     _initData();
   }
 
@@ -46,7 +47,14 @@ class _AddPetDetailInfoModel extends TTChangeNotifier<_AddPetDetailInfoView> {
     Navigator.of(context).pop();
   }
 
-  void onSkipPressed() {}
+  void onSkipPressed() {
+    if (isFromEdit) {
+      //save info
+      Navigator.of(context).pop();
+      return;
+    }
+    _goToEditProfile();
+  }
 
   void onDateOfBirthPressed() async {
     final pickedDate = await showDatePicker(
@@ -63,6 +71,15 @@ class _AddPetDetailInfoModel extends TTChangeNotifier<_AddPetDetailInfoView> {
   }
 
   void onNextPressed() {
+    if (isFromEdit) {
+      //save info
+      Navigator.of(context).pop();
+      return;
+    }
+    _goToEditProfile();
+  }
+
+  void _goToEditProfile() {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
       return createEditProfile();
     }));

@@ -24,7 +24,7 @@ class _AddPetDetailInfoViewState extends TTState<_AddPetDetailInfoModel, _AddPet
             child: InkWell(
               onTap: model.onSkipPressed,
               child: Text(
-                'Skip',
+                model.isFromEdit ? 'Save' : 'Skip',
                 style: St.body13600.copyWith(color: Cl.violet),
               ),
             ),
@@ -54,7 +54,7 @@ class _AddPetDetailInfoViewState extends TTState<_AddPetDetailInfoModel, _AddPet
                   TTButton(
                     onPressed: model.onNextPressed,
                     backgroundColor: Cl.violet,
-                    text: 'Next',
+                    text: model.isFromEdit ? 'Save' : 'Next',
                   ),
                   const SizedBox(height: 115)
                 ],

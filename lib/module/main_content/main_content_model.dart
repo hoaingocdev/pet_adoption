@@ -20,6 +20,9 @@ class _MainContentModel extends TTChangeNotifier<_MainContentView> {
   void oSearchPressed() {}
 
   void onShowBottomSheet() {
-    showAddPetDetailBottomSheet(context);
+    // showAddPetDetailBottomSheet(context);
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createResultsNearMe();
+    }));
   }
 }

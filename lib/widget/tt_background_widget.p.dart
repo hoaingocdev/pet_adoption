@@ -39,99 +39,101 @@ class TTBackgroundWidget extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Column(
-            children: [
-              Container(
-                padding: EdgeInsets.only(top: top ?? 5),
-                width: double.infinity,
-                height: height,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Cl.cl4596EA,
-                      Cl.cl4552CB,
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    stops: [0, 0.5],
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(top: top ?? 5),
+                  width: double.infinity,
+                  height: height,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Cl.cl4596EA,
+                        Cl.cl4552CB,
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      stops: [0, 0.5],
+                    ),
                   ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    IconButton(
-                      onPressed: onPressed,
-                      icon: const Icon(
-                        Icons.arrow_back,
-                        color: Cl.white,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 40),
-                      child: Text(
-                        title,
-                        style: St.body34700.copyWith(color: Cl.white),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: heightSpace),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 1,
-                      width: 92,
-                      color: Cl.clF0F0F8,
-                    ),
-                    const SizedBox(width: 16),
-                    Text(
-                      'or continue with',
-                      style: St.body16400.copyWith(color: Cl.black),
-                    ),
-                    const SizedBox(width: 16),
-                    Container(
-                      height: 1,
-                      width: 92,
-                      color: Cl.clF0F0F8,
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 11),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 104),
-                child: Row(
-                  children: [
-                    Image.asset(Id.ic_facebook),
-                    const SizedBox(width: 55),
-                    Image.asset(Id.ic_gg_red),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 105),
-              InkWell(
-                onTap: onPagePressed,
-                child: RichText(
-                  text: TextSpan(
-                    text: text1,
-                    style: St.body16400.copyWith(
-                      color: Cl.black,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TextSpan(
-                        text: text2,
-                        style: St.body16700.copyWith(
-                          color: Cl.violet,
+                      IconButton(
+                        onPressed: onPressed,
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          color: Cl.white,
                         ),
-                      )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 40),
+                        child: Text(
+                          title,
+                          style: St.body34700.copyWith(color: Cl.white),
+                        ),
+                      ),
                     ],
                   ),
                 ),
-              )
-            ],
+                SizedBox(height: heightSpace),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 1,
+                        width: 92,
+                        color: Cl.clF0F0F8,
+                      ),
+                      const SizedBox(width: 16),
+                      Text(
+                        'or continue with',
+                        style: St.body16400.copyWith(color: Cl.black),
+                      ),
+                      const SizedBox(width: 16),
+                      Container(
+                        height: 1,
+                        width: 92,
+                        color: Cl.clF0F0F8,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 11),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 104),
+                  child: Row(
+                    children: [
+                      Image.asset(Id.ic_facebook),
+                      const SizedBox(width: 55),
+                      Image.asset(Id.ic_gg_red),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 105),
+                InkWell(
+                  onTap: onPagePressed,
+                  child: RichText(
+                    text: TextSpan(
+                      text: text1,
+                      style: St.body16400.copyWith(
+                        color: Cl.black,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: text2,
+                          style: St.body16700.copyWith(
+                            color: Cl.violet,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ],
       ),

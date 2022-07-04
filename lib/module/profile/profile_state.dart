@@ -28,82 +28,88 @@ class _ProfileViewState extends TTState<_ProfileModel, _ProfileView> {
         ),
       ),
       backgroundColor: Cl.lightGrey,
-      body: Column(
-        children: [
-          Container(
-            // height: 314 + device.padding.top,
-            decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(4, 6),
-                    blurRadius: 28,
-                    color: Cl.cl2D368A.withOpacity(0.2),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              // height: 314 + device.padding.top,
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
                   ),
-                ],
-                color: Cl.white),
-            child: Column(
-              children: [
-                Center(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(80),
-                    child: Image.network(
-                      'https://placehold.jp/cc9999/993333/.png',
+                  boxShadow: [
+                    BoxShadow(
+                      offset: const Offset(4, 6),
+                      blurRadius: 28,
+                      color: Cl.cl2D368A.withOpacity(0.2),
+                    ),
+                  ],
+                  color: Cl.white),
+              child: Column(
+                children: [
+                  Center(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(80),
+                      child: Image.network(
+                        'https://placehold.jp/cc9999/993333/.png',
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  'Maria Martinez',
-                  style: St.body24700.copyWith(color: Cl.black),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  'Kiev',
-                  style: St.body16400.copyWith(color: Cl.grey),
-                ),
-                const SizedBox(height: 28),
-              ],
+                  const SizedBox(height: 16),
+                  Text(
+                    'Maria Martinez',
+                    style: St.body24700.copyWith(color: Cl.black),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Kiev',
+                    style: St.body16400.copyWith(color: Cl.grey),
+                  ),
+                  const SizedBox(height: 28),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 32),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: SingleChildScrollView(
+            const SizedBox(height: 32),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
                   buildProfileItem(
+                    onPressed: model.onMyPetsPressed,
                     text: 'My pets',
                     imageAsset: Id.ic_pet,
                   ),
                   buildProfileItem(
+                    onPressed: model.onMyFavouritesPressed,
                     text: 'My favourites',
                     imageAsset: Id.ic_heart_favourite_like,
                   ),
                   buildProfileItem(
+                    onPressed: model.onAddPetServicePressed,
                     text: 'Add pet service',
                     imageAsset: Id.ic_service,
                   ),
                   buildProfileItem(
+                    onPressed: model.onInviteFriendsPressed,
                     text: 'Invite friends',
                     imageAsset: Id.ic_announcement,
                   ),
                   buildProfileItem(
+                    onPressed: model.onHelpPressed,
                     text: 'Help',
                     imageAsset: Id.ic_question_mark_circle,
                   ),
                   buildProfileItem(
+                    onPressed: model.onSettingsPressed,
                     text: 'Settings',
                     imageAsset: Id.ic_settings_gear,
                   ),
                 ],
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
@@ -111,39 +117,43 @@ class _ProfileViewState extends TTState<_ProfileModel, _ProfileView> {
   Widget buildProfileItem({
     required String imageAsset,
     required String text,
+    VoidCallback? onPressed,
   }) {
     return Column(
       children: [
-        SizedBox(
-          height: 40,
-          width: double.infinity,
-          child: Row(
-            children: [
-              Container(
-                height: 36,
-                width: 36,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Cl.violet.withOpacity(0.15),
+        InkWell(
+          onTap: onPressed,
+          child: SizedBox(
+            height: 40,
+            width: double.infinity,
+            child: Row(
+              children: [
+                Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Cl.violet.withOpacity(0.15),
+                  ),
+                  child: Image.asset(imageAsset),
                 ),
-                child: Image.asset(imageAsset),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(text),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Cl.grey,
-                      size: 20,
-                    ),
-                  ],
-                ),
-              )
-            ],
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(text),
+                      ),
+                      const Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Cl.grey,
+                        size: 20,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         Container(
@@ -151,7 +161,7 @@ class _ProfileViewState extends TTState<_ProfileModel, _ProfileView> {
           margin: const EdgeInsets.only(left: 50),
           color: Cl.grey,
         ),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
       ],
     );
   }

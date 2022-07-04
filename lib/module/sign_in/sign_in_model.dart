@@ -36,6 +36,9 @@ class _SignInModel extends TTChangeNotifier<_SignInView> {
     if (!isValid) {
       return;
     }
+    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) {
+      return createMain();
+    }), ((route) => false));
   }
 
   void onVisibilityPressd() {

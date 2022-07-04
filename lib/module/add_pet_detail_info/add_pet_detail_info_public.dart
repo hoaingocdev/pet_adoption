@@ -17,9 +17,9 @@ part 'widget/general_information.p.dart';
 part 'widget/additional_information.p.dart';
 part 'widget/reminders.p.dart';
 
-ChangeNotifierProvider<_AddPetDetailInfoModel> createAddPetDetailInfo() {
+ChangeNotifierProvider<_AddPetDetailInfoModel> createAddPetDetailInfo({bool isFormEdit = false}) {
   return ChangeNotifierProvider<_AddPetDetailInfoModel>(
-    create: (_) => _AddPetDetailInfoModel(),
+    create: (_) => _AddPetDetailInfoModel(isFormEdit),
     child: _AddPetDetailInfoView(),
   );
 }

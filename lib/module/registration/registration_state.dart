@@ -8,6 +8,7 @@ class _RegistrationViewState extends TTState<_RegistrationModel, _RegistrationVi
       body: Stack(
         children: [
           TTBackgroundWidget(
+            onPagePressed: model.onSignInPressed,
             text1: 'Already have an account?',
             heightSpace: 220,
             text2: 'Sign In',
