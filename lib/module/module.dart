@@ -14,5 +14,6 @@ export './onboard/onboard_public.dart';
 export './profile/profile_public.dart';
 export './registration/registration_public.dart';
 export './results_near_me/results_near_me_public.dart';
+export './select_a_speciality/select_a_speciality_public.dart';
 export './sign_in/sign_in_public.dart';
 export './welcome/welcome_public.dart';

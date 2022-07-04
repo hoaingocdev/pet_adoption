@@ -8,3 +8,4 @@ export './tt_consum.p.dart';
 export './tt_edit_avata_widget.p.dart';
 export './tt_gender_button_widget.p.dart';
 export './tt_model_mixin.p.dart';
+export './tt_tabBar_widget.p.dart';

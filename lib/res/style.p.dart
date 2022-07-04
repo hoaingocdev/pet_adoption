@@ -65,4 +65,14 @@ class St {
     fontWeight: FontWeight.w600,
     fontFamily: Font.encodeSans,
   );
+  static TextStyle body10700 = const TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w700,
+    fontFamily: Font.encodeSans,
+  );
+  static TextStyle body14400 = const TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    fontFamily: Font.encodeSans,
+  );
 }

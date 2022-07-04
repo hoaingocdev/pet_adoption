@@ -39,7 +39,12 @@ class _AppointmentsViewState extends TTState<_AppointmentsModel, _AppointmentsVi
                     ),
                   ),
                   const SizedBox(height: 24),
-                  builTabBar(model, tabIndex),
+                  TTTabBar(
+                    text1: 'Upcoming',
+                    text2: 'Past',
+                    tabIndex: model.tabIndex,
+                    onPressed: model.onTabChanged,
+                  ),
                   const SizedBox(height: 26)
                 ],
               ),
@@ -97,54 +102,6 @@ class _AppointmentsViewState extends TTState<_AppointmentsModel, _AppointmentsVi
           onEditPressed: model.onEditPressed,
         );
       },
-    );
-  }
-
-  Widget builTabBar(_AppointmentsModel model, int tabIndex) {
-    return Container(
-      height: 38,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Cl.grey),
-      ),
-      child: TabBar(
-        indicatorColor: Colors.transparent,
-        labelPadding: EdgeInsets.zero,
-        indicator: const BoxDecoration(),
-        indicatorWeight: 0,
-        onTap: model.onTabChanged,
-
-        // indicatorWeight: 0,
-        tabs: [
-          Tab(
-            child: TTButton(
-              backgroundColor: tabIndex == 0 ? Cl.violet : Cl.white,
-              child: Center(
-                child: Text(
-                  'Upcoming',
-                  style: St.body16600.copyWith(
-                    color: tabIndex == 0 ? Cl.white : Cl.black,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Tab(
-            child: TTButton(
-              backgroundColor: tabIndex == 1 ? Cl.violet : Cl.white,
-              child: Center(
-                child: Text(
-                  'Past',
-                  style: St.body16600.copyWith(
-                    color: tabIndex == 1 ? Cl.white : Cl.black,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

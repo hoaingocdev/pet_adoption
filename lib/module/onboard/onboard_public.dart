@@ -10,7 +10,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 part 'onboard_view.dart';
 part 'onboard_model.dart';
-part 'onboard_state.dart';
+part '../../res/onboard_state.dart';
 
 ChangeNotifierProvider<_OnboardModel> createOnboard() {
   return ChangeNotifierProvider<_OnboardModel>(
