@@ -14,7 +14,10 @@ class _SelectedADateViewState extends TTState<_SelectedADateModel, _SelectedADat
             color: Cl.white),
         child: Column(
           children: [
-            const TTTitleBottomSheet(text: 'Select a date'),
+            TTTitleBottomSheet(
+              text: 'Select a date',
+              onPressed: model.onClosePagePressed,
+            ),
             SizedBox(
               height: 150,
               child: CupertinoDatePicker(
@@ -30,13 +33,15 @@ class _SelectedADateViewState extends TTState<_SelectedADateModel, _SelectedADat
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   TTButton(
+                    onPressed: model.onShow124ResultsPressed,
                     width: 160,
                     backgroundColor: Cl.violet,
                     text: 'Show 124 results ',
                   ),
                   TTButton(
+                    onPressed: model.onSkipPressed,
                     width: 160,
                     backgroundColor: Cl.clF0F0F8,
                     text: 'Skip',

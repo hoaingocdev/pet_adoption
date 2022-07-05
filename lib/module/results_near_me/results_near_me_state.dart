@@ -62,22 +62,25 @@ class _ResultsNearMeViewState extends TTState<_ResultsNearMeModel, _ResultsNearM
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Container(
-                    height: 38,
-                    padding: const EdgeInsets.only(top: 11, left: 11, bottom: 11),
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Cl.grey,
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.search_rounded),
-                        Text(
-                          ' Veterinary',
-                          style: St.body14600,
-                        ),
-                      ],
+                  InkWell(
+                    onTap: model.onLocationVFStartPressed,
+                    child: Container(
+                      height: 38,
+                      padding: const EdgeInsets.only(top: 11, left: 11, bottom: 11),
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Cl.grey,
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.search_rounded),
+                          Text(
+                            ' Veterinary',
+                            style: St.body14600,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -138,11 +141,27 @@ class _ResultsNearMeViewState extends TTState<_ResultsNearMeModel, _ResultsNearM
             Expanded(
               child: TabBarView(
                 children: [
-                  Container(
-                    color: Cl.violet,
+                  ListView.separated(
+                    separatorBuilder: (_, i) {
+                      return const SizedBox(height: 8);
+                    },
+                    itemCount: model.specialists.length,
+                    itemBuilder: (_, i) {
+                      return Specialists(
+                        specialistsInfo: model.specialists[i],
+                      );
+                    },
                   ),
-                  Container(
-                    color: Cl.violet,
+                  ListView.separated(
+                    separatorBuilder: (_, i) {
+                      return const SizedBox(height: 8);
+                    },
+                    itemCount: model.specialists.length,
+                    itemBuilder: (_, i) {
+                      return Specialists(
+                        specialistsInfo: model.specialists[i],
+                      );
+                    },
                   ),
                 ],
               ),

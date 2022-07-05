@@ -8,7 +8,7 @@ import 'package:pet_adoption/widget/widget.dart';
 
 part 'profile_view.dart';
 part 'profile_model.dart';
-part '../main_content/profile_state.dart';
+part 'profile_state.dart';
 
 ChangeNotifierProvider<_ProfileModel> createProfile() {
   return ChangeNotifierProvider<_ProfileModel>(

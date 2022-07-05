@@ -7,6 +7,7 @@ export './add_pet_detail_info/add_pet_detail_info_public.dart';
 export './appointments/appointments_public.dart';
 export './edit_profile/edit_profile_public.dart';
 export './explore/explore_public.dart';
+export './location_view_focused_start/location_view_focused_start_public.dart';
 export './main/main_public.dart';
 export './main_content/main_content_public.dart';
 export './my_pets/my_pets_public.dart';
