@@ -17,4 +17,8 @@ class _ResultsNearMeModel extends TTChangeNotifier<_ResultsNearMeView> {
   void onDentistPressed() {
     showSelectASpecialityBottomSheet(context);
   }
+
+  void onCalendarPressed() {
+    showSelectADateBottomSheet(context);
+  }
 }

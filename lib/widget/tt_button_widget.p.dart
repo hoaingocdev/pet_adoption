@@ -8,6 +8,7 @@ class TTButton extends StatelessWidget {
   final bool hasShadow;
   final Color? borderColor;
   final Color? backgroundColor;
+  final Color? textColor;
 
   final double height;
   final double borderRadius;
@@ -26,6 +27,7 @@ class TTButton extends StatelessWidget {
     this.width,
     this.backgroundColor,
     this.shadowColor = Colors.transparent,
+    this.textColor,
   }) : super(key: key);
 
   factory TTButton.shadow(
@@ -77,7 +79,7 @@ class TTButton extends StatelessWidget {
             child: child ??
                 Text(
                   text ?? '',
-                  style: St.body16700.copyWith(color: Cl.white),
+                  style: St.body16700.copyWith(color: textColor ?? Cl.white),
                 ),
           )),
     );

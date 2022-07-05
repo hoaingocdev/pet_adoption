@@ -11,32 +11,9 @@ class _SelectASpecialityViewState extends TTState<_SelectASpecialityModel, _Sele
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 50),
-                    child: IconButton(
-                      onPressed: model.onBackPressed,
-                      icon: const Icon(
-                        Icons.close,
-                        color: Cl.violet,
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 60),
-                    child: Text(
-                      'Select a speciality',
-                      style: St.body18700.copyWith(color: Cl.black),
-                    ),
-                  ),
-                )
-              ],
+            TTTitleBottomSheet(
+              text: 'Select a speciality',
+              onPressed: model.onBackPressed,
             ),
             const SizedBox(height: 35),
             Text(

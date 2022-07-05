@@ -61,18 +61,18 @@ class _ResultsNearMeViewState extends TTState<_ResultsNearMeModel, _ResultsNearM
                       )
                     ],
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Container(
                     height: 38,
-                    padding: EdgeInsets.only(top: 11, left: 11, bottom: 11),
-                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.only(top: 11, left: 11, bottom: 11),
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Cl.grey,
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.search_rounded),
+                        const Icon(Icons.search_rounded),
                         Text(
                           ' Veterinary',
                           style: St.body14600,
@@ -80,13 +80,14 @@ class _ResultsNearMeViewState extends TTState<_ResultsNearMeModel, _ResultsNearM
                       ],
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TTButton(
+                          onPressed: model.onCalendarPressed,
                           width: 91,
                           height: 28,
                           borderRadius: 6,
@@ -95,7 +96,7 @@ class _ResultsNearMeViewState extends TTState<_ResultsNearMeModel, _ResultsNearM
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(Id.ic_calendar),
-                              SizedBox(width: 11),
+                              const SizedBox(width: 11),
                               Text(
                                 '9 Sep',
                                 style: St.body14600.copyWith(color: Cl.white),
@@ -120,7 +121,7 @@ class _ResultsNearMeViewState extends TTState<_ResultsNearMeModel, _ResultsNearM
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(Id.ic_fillter),
-                              SizedBox(width: 11),
+                              const SizedBox(width: 11),
                               Text(
                                 'Filter',
                                 style: St.body14600.copyWith(color: Cl.black),

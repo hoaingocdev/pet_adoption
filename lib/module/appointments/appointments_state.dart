@@ -3,7 +3,6 @@ part of appointments;
 class _AppointmentsViewState extends TTState<_AppointmentsModel, _AppointmentsView> {
   @override
   Widget buildWithModel(BuildContext context, _AppointmentsModel model) {
-    final tabIndex = model.tabIndex;
     return Scaffold(
       backgroundColor: Cl.lightGrey,
       body: DefaultTabController(
