@@ -9,15 +9,18 @@ class Id {
 
   static const String ic_announcement = 'assets/images/ic_announcement.png';
   static const String ic_calendar = 'assets/images/ic_calendar.png';
+  static const String ic_check = 'assets/images/ic_check.png';
   static const String ic_clock = 'assets/images/ic_clock.png';
   static const String ic_clock_big = 'assets/images/ic_clock_big.png';
   static const String ic_clock_black = 'assets/images/ic_clock_black.png';
   static const String ic_close = 'assets/images/ic_close.png';
   static const String ic_close1 = 'assets/images/ic_close1.png';
   static const String ic_compound_path = 'assets/images/ic_compound_path.png';
+  static const String ic_current_location = 'assets/images/ic_current_location.png';
   static const String ic_edit = 'assets/images/ic_edit.png';
   static const String ic_explore = 'assets/images/ic_explore.png';
   static const String ic_facebook = 'assets/images/ic_facebook.png';
+  static const String ic_favourite = 'assets/images/ic_favourite.png';
   static const String ic_fb = 'assets/images/ic_fb.png';
   static const String ic_female = 'assets/images/ic_female.png';
   static const String ic_fillter = 'assets/images/ic_fillter.png';
@@ -32,8 +35,10 @@ class Id {
   static const String ic_profile = 'assets/images/ic_profile.png';
   static const String ic_question_mark_circle = 'assets/images/ic_question_mark_circle.png';
   static const String ic_search = 'assets/images/ic_search.png';
+  static const String ic_select_search_area_on_a_map = 'assets/images/ic_select_search_area_on_a_map.png';
   static const String ic_service = 'assets/images/ic_service.png';
   static const String ic_settings_gear = 'assets/images/ic_settings_gear.png';
+  static const String ic_share = 'assets/images/ic_share.png';
   static const String ic_success = 'assets/images/ic_success.png';
   static const String ic_wallet = 'assets/images/ic_wallet.png';
   static const String ic_work = 'assets/images/ic_work.png';

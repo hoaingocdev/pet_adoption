@@ -1,6 +1,8 @@
 library location_view_focused_start;
 
 import 'package:flutter/material.dart';
+import 'package:pet_adoption/model/model.dart';
+import 'package:pet_adoption/res/res.dart';
 import 'package:provider/provider.dart';
 import 'package:pet_adoption/widget/widget.dart';
 

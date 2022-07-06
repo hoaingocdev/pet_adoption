@@ -47,4 +47,10 @@ class _ResultsNearMeModel extends TTChangeNotifier<_ResultsNearMeView> {
       return createLocationViewFocusedStart();
     }));
   }
+
+  void onVeterinaryPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createVeterinaryCard();
+    }));
+  }
 }
