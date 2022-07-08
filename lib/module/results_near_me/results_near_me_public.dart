@@ -11,7 +11,7 @@ import 'package:pet_adoption/widget/widget.dart';
 part 'results_near_me_view.dart';
 part 'results_near_me_model.dart';
 part 'results_near_me_state.dart';
-part 'widget/specialists.p.dart';
+part '../../widget/specialists.p.dart';
 
 ChangeNotifierProvider<_ResultsNearMeModel> createResultsNearMe() {
   return ChangeNotifierProvider<_ResultsNearMeModel>(

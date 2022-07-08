@@ -11,7 +11,6 @@ class Specialists extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        padding: const EdgeInsets.only(left: 16),
         margin: const EdgeInsets.symmetric(horizontal: 8),
         height: 128,
         decoration: BoxDecoration(
@@ -19,13 +18,12 @@ class Specialists extends StatelessWidget {
           color: Cl.white,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(
-                    top: 16,
-                  ),
+                  padding: const EdgeInsets.only(top: 16, left: 16),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(18),
                     child: Image.network(
@@ -78,31 +76,34 @@ class Specialists extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 9),
-            Row(
-              children: [
-                Text(
-                  specialistsInfo.experience.toString(),
-                  style: St.body14600.copyWith(color: Cl.grey),
-                ),
-                const SizedBox(width: 3),
-                Text(
-                  'years of experience',
-                  style: St.body11500.copyWith(color: Cl.grey),
-                ),
-                const SizedBox(width: 10),
-                buildItem(image: Id.ic_map),
-                const SizedBox(width: 8),
-                Text(
-                  specialistsInfo.distanceDisplay,
-                  style: St.body11500.copyWith(color: Cl.black),
-                ),
-                const SizedBox(width: 12),
-                buildItem(image: Id.ic_wallet),
-                Text(
-                  specialistsInfo.feeDisplay,
-                  style: St.body11500.copyWith(color: Cl.black),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                children: [
+                  Text(
+                    specialistsInfo.experience.toString(),
+                    style: St.body14600.copyWith(color: Cl.grey),
+                  ),
+                  const SizedBox(width: 3),
+                  Text(
+                    'years of experience',
+                    style: St.body11500.copyWith(color: Cl.grey),
+                  ),
+                  const SizedBox(width: 10),
+                  buildItem(image: Id.ic_map),
+                  const SizedBox(width: 8),
+                  Text(
+                    specialistsInfo.distanceDisplay,
+                    style: St.body11500.copyWith(color: Cl.black),
+                  ),
+                  const SizedBox(width: 12),
+                  buildItem(image: Id.ic_wallet),
+                  Text(
+                    specialistsInfo.feeDisplay,
+                    style: St.body11500.copyWith(color: Cl.black),
+                  ),
+                ],
+              ),
             )
           ],
         ),

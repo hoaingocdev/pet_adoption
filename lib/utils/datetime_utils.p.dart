@@ -2,6 +2,9 @@ import 'package:intl/intl.dart';
 
 class DatetimeUtils {
   DatetimeUtils._();
+  static const _weekdayFormat = 'EE';
+  static const _monthFormat = 'MMMM';
+  static const _timeFormat = 'Hm';
   static const _dateTimeFormat = 'MMM dd,yyyy';
 
   static String _format(DateTime d, {String? format}) {
@@ -12,10 +15,31 @@ class DatetimeUtils {
     }
   }
 
+  static String monthFormat(DateTime? d) {
+    if (d == null) {
+      return '-';
+    }
+    return _format(d, format: _monthFormat);
+  }
+
+  static String timeFormat(DateTime? d) {
+    if (d == null) {
+      return '-';
+    }
+    return _format(d, format: _timeFormat);
+  }
+
   static String dateTimeFormat(DateTime? d) {
     if (d == null) {
       return '-';
     }
     return _format(d, format: _dateTimeFormat);
+  }
+
+  static String weekdayFormat(DateTime? d) {
+    if (d == null) {
+      return '-';
+    }
+    return _format(d, format: _weekdayFormat);
   }
 }

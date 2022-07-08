@@ -18,6 +18,7 @@ class Id {
   static const String ic_compound_path = 'assets/images/ic_compound_path.png';
   static const String ic_current_location = 'assets/images/ic_current_location.png';
   static const String ic_edit = 'assets/images/ic_edit.png';
+  static const String ic_edit_pen_file = 'assets/images/ic_edit_pen_file.png';
   static const String ic_explore = 'assets/images/ic_explore.png';
   static const String ic_facebook = 'assets/images/ic_facebook.png';
   static const String ic_favourite = 'assets/images/ic_favourite.png';

@@ -5,6 +5,7 @@
 export './add_pet_detail/add_pet_detail_public.dart';
 export './add_pet_detail_info/add_pet_detail_info_public.dart';
 export './appointments/appointments_public.dart';
+export './booking_confirmation/booking_confirmation_public.dart';
 export './edit_profile/edit_profile_public.dart';
 export './explore/explore_public.dart';
 export './location_view_focused_start/location_view_focused_start_public.dart';
