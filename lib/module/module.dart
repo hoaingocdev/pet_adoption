@@ -19,5 +19,6 @@ export './results_near_me/results_near_me_public.dart';
 export './select_a_speciality/select_a_speciality_public.dart';
 export './selected_a_date/selected_a_date_public.dart';
 export './sign_in/sign_in_public.dart';
+export './thank_you/thank_you_public.dart';
 export './veterinary_card/veterinary_card_public.dart';
 export './welcome/welcome_public.dart';

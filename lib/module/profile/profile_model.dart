@@ -18,4 +18,10 @@ class _ProfileModel extends TTChangeNotifier<_ProfileView> {
   void onHelpPressed() {}
 
   void onSettingsPressed() {}
+
+  void onEditPressed() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return createEditProfile();
+    }));
+  }
 }

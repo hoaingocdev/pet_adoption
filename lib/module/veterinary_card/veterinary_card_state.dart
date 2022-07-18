@@ -85,7 +85,7 @@ class _VeterinaryCardViewState extends TTState<_VeterinaryCardModel, _Veterinary
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: 20),
+                          padding: const EdgeInsets.only(top: 20),
                           child: TTButton(
                             onPressed: model.onBookPressed,
                             height: 38,

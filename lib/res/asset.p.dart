@@ -10,6 +10,7 @@ class Id {
   static const String ic_announcement = 'assets/images/ic_announcement.png';
   static const String ic_calendar = 'assets/images/ic_calendar.png';
   static const String ic_check = 'assets/images/ic_check.png';
+  static const String ic_check_big = 'assets/images/ic_check_big.png';
   static const String ic_clock = 'assets/images/ic_clock.png';
   static const String ic_clock_big = 'assets/images/ic_clock_big.png';
   static const String ic_clock_black = 'assets/images/ic_clock_black.png';

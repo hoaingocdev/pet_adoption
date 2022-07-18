@@ -96,7 +96,7 @@ class _LocationViewFocusedStartViewState
         },
         itemCount: model.addesses.length,
         itemBuilder: (_, i) {
-          if (i == 0)
+          if (i == 0) {
             return Column(
               children: [
                 builItem(
@@ -108,13 +108,14 @@ class _LocationViewFocusedStartViewState
                   imageAsset: Id.ic_select_search_area_on_a_map,
                   text: 'Select search area on a map',
                 ),
-                SizedBox(height: 21),
+                const SizedBox(height: 21),
                 Container(
                   height: 1,
                   color: Cl.grey,
                 ),
               ],
             );
+          }
           return Row(
             children: [
               Image.asset(Id.ic_map),

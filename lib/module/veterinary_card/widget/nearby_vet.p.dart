@@ -22,7 +22,7 @@ class NearbyVet extends StatelessWidget {
             height: 140,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              separatorBuilder: (_, i) => SizedBox(width: 16),
+              separatorBuilder: (_, i) => const SizedBox(width: 16),
               itemCount: model.nearbyVets.length,
               itemBuilder: (_, i) {
                 return Specialists(

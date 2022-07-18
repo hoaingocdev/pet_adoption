@@ -7,7 +7,7 @@ class PetAdoption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: createMain(),
+      home: createOnboard(),
     );
   }
 }

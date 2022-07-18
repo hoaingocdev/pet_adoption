@@ -3,6 +3,7 @@ library appointments;
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:pet_adoption/model/appointment_info.p.dart';
+import 'package:pet_adoption/module/edit_profile/edit_profile_public.dart';
 import 'package:pet_adoption/res/res.dart';
 import 'package:provider/provider.dart';
 import 'package:pet_adoption/widget/widget.dart';

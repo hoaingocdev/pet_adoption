@@ -8,15 +8,18 @@ class _ProfileViewState extends TTState<_ProfileModel, _ProfileView> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
-            child: Row(
-              children: [
-                Image.asset(Id.ic_edit),
-                const SizedBox(width: 4),
-                Text(
-                  'Edit',
-                  style: St.body13600.copyWith(color: Cl.violet),
-                )
-              ],
+            child: InkWell(
+              onTap: model.onEditPressed,
+              child: Row(
+                children: [
+                  Image.asset(Id.ic_edit),
+                  const SizedBox(width: 4),
+                  Text(
+                    'Edit',
+                    style: St.body13600.copyWith(color: Cl.violet),
+                  )
+                ],
+              ),
             ),
           )
         ],

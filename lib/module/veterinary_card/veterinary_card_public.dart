@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:pet_adoption/model/model.dart';
 import 'package:pet_adoption/module/module.dart';
-import 'package:pet_adoption/module/results_near_me/results_near_me_public.dart';
 import 'package:pet_adoption/res/res.dart';
 import 'package:pet_adoption/utils/utils.dart';
 import 'package:provider/provider.dart';

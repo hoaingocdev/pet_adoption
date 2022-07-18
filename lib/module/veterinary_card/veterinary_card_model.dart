@@ -40,7 +40,13 @@ class _VeterinaryCardModel extends TTChangeNotifier<_VeterinaryCardView> {
 
     final lsTime = List.generate(17, (index) {
       startTime = startTime.add(const Duration(minutes: 30));
-      return DateTime(startTime.year, startTime.month, startTime.day, startTime.hour, startTime.minute);
+      return DateTime(
+        startTime.year,
+        startTime.month,
+        startTime.day,
+        startTime.hour,
+        startTime.minute,
+      );
     });
     times.clear();
     times.addAll(lsTime);

@@ -78,7 +78,7 @@ class CalendarBox extends StatelessWidget {
               },
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           SizedBox(
             height: 30,
             child: ListView.separated(
@@ -87,7 +87,7 @@ class CalendarBox extends StatelessWidget {
               separatorBuilder: (_, i) => const SizedBox(width: 8),
               itemCount: model.times.length,
               itemBuilder: (_, i) {
-                return buildTime(
+                return TTListTime(
                   dateTime: model.times[i],
                   onPressed: () => model.onTimeSelectedPressed(i),
                   isSelected: i == model.isTimeSelected,
@@ -96,32 +96,6 @@ class CalendarBox extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget buildTime({
-    required DateTime dateTime,
-    VoidCallback? onPressed,
-    bool isSelected = false,
-  }) {
-    return InkWell(
-      onTap: onPressed,
-      child: Container(
-        height: 28,
-        width: 68,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: isSelected ? Cl.violet : Cl.clF0F0F8,
-        ),
-        child: Center(
-          child: Text(
-            DatetimeUtils.timeFormat(dateTime),
-            style: St.body14600.copyWith(
-              color: isSelected ? Cl.white : Cl.black,
-            ),
-          ),
-        ),
       ),
     );
   }
@@ -146,7 +120,7 @@ class CalendarBox extends StatelessWidget {
                 width: 48,
                 color: Cl.violet,
               ),
-            SizedBox(height: 7),
+            const SizedBox(height: 7),
             Text(
               dateTime.day.toString(),
               style: St.body18700.copyWith(color: Cl.violet),

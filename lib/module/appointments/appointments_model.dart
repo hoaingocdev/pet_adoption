@@ -51,9 +51,15 @@ class _AppointmentsModel extends TTChangeNotifier<_AppointmentsView> {
     }
   }
 
-  void onCenCelPressed() {}
+  void onCenCelPressed() {
+    Navigator.of(context).pop();
+  }
 
-  void onEditPressed() {}
+  void onEditPressed() {
+    // Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+    //   return createEditProfile();
+    // }));
+  }
 
   void onFindASpecialistPressed() {}
 }
